@@ -8,7 +8,7 @@ export default authMiddleware({
         auth(.*): Any route that starts with auth, such as /auth/login or /auth/register.
         /portal(.*): Any route that starts with /portal.
      */
-    publicRoutes: ['/', 'auth(.*)', '/portal(.*)'],
+    publicRoutes: ['/', 'auth(.*)', '/portal(.*)', '/images(.*)'],
     ignoredRoutes: ['/chatbox'],
 });
 
