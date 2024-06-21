@@ -1,3 +1,4 @@
+'use client';
 import React, {useState} from 'react'
 
 type InitialValuesProps = {
@@ -41,7 +42,7 @@ export const AuthContextProvider = ({children} : {children : React.ReactNode }) 
  * This hook provides an easy way to access the context values.
  * @returns {InitialValuesProps} - An object containing the current step and a function to update the current step.
  */
-export const useAuthContext = () => {
+export const useAuthContextHook = () => {
   const state = React.useContext(authContext);
   return state;
 };

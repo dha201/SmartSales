@@ -1,3 +1,4 @@
+'use client';
 /**
  * Note next/router traditional used in Next.js 12 and ealier versions.
  * it uses file-based routing system, where each file in the pages directory becomes a route.
