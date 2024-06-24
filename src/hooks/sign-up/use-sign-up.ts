@@ -10,7 +10,7 @@ import {useRouter} from 'next/navigation';
 import {useToast} from '@/components/ui/use-toast'; //notifications component
 import {useForm} from 'react-hook-form';
 import {useState} from 'react';
-import { useSignUp } from '@clerk/nextjs';
+import {useSignUp} from '@clerk/nextjs';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {
     UserRegistrationSchema,
@@ -22,6 +22,7 @@ import {onCompleteUserRegistration} from '@/action/auth/index';
 
 //Custom Hook for Clerk Authentication. P.S Check note.txt in this folder for more information about schema and useForm().
 export const useSignUpForm = () => { 
+    
     const { toast } = useToast();
     const [loading, setLoading] = useState<boolean>(false);
     const { signUp, isLoaded, setActive } = useSignUp();

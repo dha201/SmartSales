@@ -8,8 +8,8 @@ export default authMiddleware({
         auth(.*): Any route that starts with auth, such as /auth/login or /auth/register.
         /portal(.*): Any route that starts with /portal.
      */
-    publicRoutes: ['/', 'auth(.*)', '/portal(.*)', '/images(.*)'],
-    ignoredRoutes: ['/chatbox'],
+    publicRoutes: ['/', '/auth(.*)', '/portal(.*)', '/images(.*)'],
+    ignoredRoutes: ['/chatbot'],
 });
 
 export const config = {
@@ -19,5 +19,5 @@ export const config = {
      * /: This pattern matches the root route of the application
      * /(api|trpc)(.*): This pattern matches any route that starts with /api or /trpc. It ensures that the middleware is applied to API routes and tRPC (TypeScript Remote Procedure Call) routes.
      */
-    matcher: ['/((?!.+. [w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+    matcher: ['/((?!.+.[w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 }
