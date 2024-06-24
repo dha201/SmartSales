@@ -13,6 +13,8 @@ const ButtonHandler = (props: Props) => {
   const { formState, getFieldState, getValues } = useFormContext()
   const { onGenerateOTP } = useSignUpForm()
 
+  // isDirty is a boolean value that returns true if the field has been modified
+  // , indicates whether a form field has been changed by the user since the form was initialized or last reset.
   const { isDirty: isName } = getFieldState('fullname', formState)
   const { isDirty: isEmail } = getFieldState('email', formState)
   const { isDirty: isPassword } = getFieldState('password', formState)
