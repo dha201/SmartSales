@@ -2,7 +2,7 @@ import React from 'react';
 import SignupFormProvider from '@/components/forms/sign-up/form-provider';  
 import RegistrationFormStep from '@/components/forms/sign-up/registration-step';
 import ButtonHandler from '@/components/forms/sign-up/button-handlers';
-import HighLightBar from './highlight-bar';
+import HighLightBar from '../../../components/forms/sign-up/highlight-bar';
 
 type Props = {}
 const SignUp = (props : Props) => {

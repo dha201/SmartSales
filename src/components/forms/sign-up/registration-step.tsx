@@ -21,19 +21,23 @@ import React, {useState} from 'react';
 import { useFormContext } from 'react-hook-form';
 import { useAuthContextHook } from '@/context/use-auth-context';
 import TypeSelectionForm from './type-selection-form'; 
-
+import { Spinner } from '@/components/spinner';
+// Dynamically import the form components based on the current step for performance.
+// The dynamic import loads the component only when it's needed, which can improve initial page load times.
+const AccountDetailForm = dynamic(() => import('./account-details-form'), {
+    ssr: false, //disables server-side rendering for this component.
+    loading: Spinner //specifies a component to show while the dynamic import is loading.
+}); 
 
 type Props = {}
 
 const RegistrationFormStep = (props: Props) => {
-
     // 1. Retrieve form context using useFormContext hook
     const {
         register,
         formState: { errors },
         setValue,
     } = useFormContext();
-
 
     // 2. Access the current step from the authentication context
     const { currentStep } = useAuthContextHook();
@@ -43,7 +47,11 @@ const RegistrationFormStep = (props: Props) => {
     const [onUserType, setOnUserType] = useState<'owner' | 'student'>('owner');
     setValue('otp', onOTP);
 
-    // 5. Render different form components based on the current step
+    /**
+     * 5. Render different form components based on the current step
+     * step 1:user type selection component
+     * step 2:owner registration form
+     */
     switch(currentStep){
         case 1: 
             return (
@@ -54,6 +62,7 @@ const RegistrationFormStep = (props: Props) => {
                 />
             )
         case 2:
+            return <AccountDetailForm></AccountDetailForm>
         case 3:
     }
 
