@@ -1,7 +1,7 @@
 import { USER_REGISTRATION_FORM } from '@/constants/forms'
 import React from 'react'
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
-import FormGenerator from '../forms-generator'
+import FormGenerator from '../form-generator'
 
 type Props = {
     // register is a function that registers an input element to the form context.
