@@ -4,7 +4,7 @@ import RegistrationFormStep from '@/components/forms/sign-up/registration-step';
 import ButtonHandler from '@/components/forms/sign-up/button-handlers';
 import HighLightBar from '../../../components/forms/sign-up/highlight-bar';
 
-type Props = {}
+type Props = {} 
 const SignUp = (props : Props) => {
     return (
         <div className="flex-1 py-36 md:px-16 w-full">

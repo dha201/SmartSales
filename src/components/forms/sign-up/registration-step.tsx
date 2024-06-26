@@ -22,11 +22,14 @@ import { useFormContext } from 'react-hook-form';
 import { useAuthContextHook } from '@/context/use-auth-context';
 import TypeSelectionForm from './type-selection-form'; 
 import { Spinner } from '@/components/spinner';
+import dynamic from 'next/dynamic';
+const SpinnerWrapper = () => <Spinner />;
+
 // Dynamically import the form components based on the current step for performance.
 // The dynamic import loads the component only when it's needed, which can improve initial page load times.
-const AccountDetailForm = dynamic(() => import('./account-details-form'), {
+const DetailForm = dynamic(() => import('./account-details-form'), {
     ssr: false, //disables server-side rendering for this component.
-    loading: Spinner //specifies a component to show while the dynamic import is loading.
+    loading: SpinnerWrapper //specifies a component to show while the dynamic import is loading.
 }); 
 
 type Props = {}
@@ -62,7 +65,10 @@ const RegistrationFormStep = (props: Props) => {
                 />
             )
         case 2:
-            return <AccountDetailForm></AccountDetailForm>
+            return <DetailForm 
+                errors={errors}
+                register={register}
+            />
         case 3:
     }
 
