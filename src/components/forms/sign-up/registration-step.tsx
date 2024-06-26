@@ -32,6 +32,11 @@ const DetailForm = dynamic(() => import('./account-details-form'), {
     loading: SpinnerWrapper //specifies a component to show while the dynamic import is loading.
 }); 
 
+const OTPForm = dynamic(() => import('./otp-form'), {
+    ssr: false, //disables server-side rendering for this component.
+    loading: SpinnerWrapper //specifies a component to show while the dynamic import is loading.
+}); 
+
 type Props = {}
 
 const RegistrationFormStep = (props: Props) => {
@@ -70,6 +75,12 @@ const RegistrationFormStep = (props: Props) => {
                 register={register}
             />
         case 3:
+            return(
+                <OTPForm
+                    onOTP={onOTP}
+                    setOnOTP={setOnOTP}
+                />
+            )
     }
 
   return (

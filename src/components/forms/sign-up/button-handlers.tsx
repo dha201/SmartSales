@@ -44,9 +44,16 @@ const ButtonHandler = (props: Props) => {
   if (currentStep === 2) {
     return (
       <div className="w-full flex flex-col gap-3 items-center">
+        
         <Button
           type="submit"
           className="w-full"
+          /* Button Behavior: 
+          * This spread operator adds an onClick handler only if all the form fields (name, email, and password) are dirty (have been changed). 
+          * The onGenerateOTP function is called with setCurrentStep as an argument. 
+          * This function is defined in the useSignUpForm hook and includes logic to increment the step:
+          *     'onNext((prev) => prev + 1);'
+          */
           {...(isName &&
             isEmail &&
             isPassword && {
@@ -60,6 +67,7 @@ const ButtonHandler = (props: Props) => {
         >
           Continue
         </Button>
+
         <p>
           Already have an account?{' '}
           <Link
@@ -69,6 +77,7 @@ const ButtonHandler = (props: Props) => {
             Sign In
           </Link>
         </p>
+
       </div>
     )
   }
