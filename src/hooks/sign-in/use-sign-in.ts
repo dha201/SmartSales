@@ -18,7 +18,25 @@ export const useSignInForm = () => {
     const router = useRouter(); // Next.js hook for routing
     const { toast } = useToast(); // Custom hook for displaying toast notifications
 
-    const methods = useForm<UserLoginProps>({ // Manages form state and validation
+    /**
+     * Manages form state and validation
+     * This methods object contains all the form-related methods and state needed to manage the form. 
+     * Such as:
+     *  register: A function to register form inputs with the form
+     *            and returns an object with several properties including:
+     *                  - name
+     *                  - onchange
+     *                  - ref
+     *                  - onBlur, etc.
+     *  handleSubmit: A function to handle form submission.
+     *  formState: An object containing the form's state, such as errors, touched fields, etc.
+     *  setValue: A function to set the value of a form field.
+     *  getValues: A function to get the current values of the form fields.
+     *  reset: A function to reset the form to its initial state.
+     * 
+     * Configure the useForm hook with the following options:
+     */
+    const methods = useForm<UserLoginProps>({ 
         resolver: zodResolver(UserLoginSchema),
         mode: 'onChange',
     })

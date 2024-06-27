@@ -31,6 +31,9 @@ const SignInFormProvider = ({ children }: Props) => {
   
     return (
       <AuthContextProvider>
+        {/**
+         * {...methods} makes all the properties and methods from 'useForm' available to any component within FormProivder.
+         */}
         <FormProvider {...methods}>
           <form onSubmit={onHandleSubmit} className="h-full">
             <div className="flex flex-col justify-between gap-3 h-full">
