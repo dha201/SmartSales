@@ -1,4 +1,3 @@
-import { onGetBlogPosts } from '@/actions/landing'
 import NavBar from '@/components/navbar'
 import { Button } from '@/components/ui/button'
 import {
@@ -14,11 +13,12 @@ import clsx from 'clsx'
 import { ArrowRightCircleIcon, Check } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import parse from 'html-react-parser'
-import { getMonthName } from '@/lib/utils'
+// import parse from 'html-react-parser'
+// import { getMonthName } from '@/lib/utils'
+// import { onGetBlogPosts } from '@/actions/landing'
 
 export default async function Home() {
-  const posts:
+  /* const posts:
     | {
         id: string
         title: string
@@ -27,7 +27,7 @@ export default async function Home() {
         createdAt: Date
       }[]
     | undefined = await onGetBlogPosts()
-  console.log(posts)
+  console.log(posts) */
   return (
     <main>
       <NavBar />
@@ -109,6 +109,8 @@ export default async function Home() {
         ))}
       </div>
 
+      {/* Blog Posts for SEO optimization using CLOUDWAYS
+
       <section className="flex justify-center items-center flex-col gap-4 mt-28">
         <h2 className="text-4xl text-center">News Room</h2>
         <p className="text-muted-foreground text-center max-w-lg">
@@ -141,7 +143,7 @@ export default async function Home() {
               </Card>
             </Link>
           ))}
-      </section>
+      </section> */}
     </main>
   )
 }
