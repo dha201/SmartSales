@@ -109,7 +109,7 @@ export default async function Home() {
         ))}
       </div>
 
-      {/* Blog Posts for SEO optimization using CLOUDWAYS
+      {/* Blog Post Section for SEO optimization using CLOUDWAYS
 
       <section className="flex justify-center items-center flex-col gap-4 mt-28">
         <h2 className="text-4xl text-center">News Room</h2>
